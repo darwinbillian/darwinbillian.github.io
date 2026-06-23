@@ -1,4 +1,8 @@
-import { LucideCodeXml, LucideExternalLink } from "lucide-react";
+import {
+  LucideChevronsDown,
+  LucideCodeXml,
+  LucideExternalLink,
+} from "lucide-react";
 import Contacts from "@/components/Contacts";
 
 export default function Home() {
@@ -23,7 +27,14 @@ function Hero() {
         <p className="mt-4">
           Based in Indonesia &middot; Open-Source Contributor
         </p>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex items-center justify-center gap-4">
+          <a
+            href="#projects"
+            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded hover:border-white/20 hover:bg-neutral-800"
+          >
+            Projects
+            <LucideChevronsDown size={16} />
+          </a>
           <Contacts />
         </div>
       </section>
@@ -34,7 +45,7 @@ function Hero() {
 function Projects() {
   return (
     <div className="flex flex-col items-center px-16">
-      <section className="w-full max-w-5xl py-32">
+      <section id="projects" className="w-full max-w-5xl py-32">
         <div className="flex items-center">
           <h2 className="flex-1 text-3xl font-bold text-neutral-100">
             Projects
