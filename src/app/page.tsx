@@ -1,10 +1,11 @@
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { LucideMail } from "lucide-react";
+import { LucideExternalLink, LucideMail } from "lucide-react";
 
 export default function Home() {
   return (
     <main>
       <Hero />
+      <Projects />
     </main>
   );
 }
@@ -35,6 +36,28 @@ function Hero() {
             className="transition hover:text-neutral-100"
           >
             <LucideMail />
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function Projects() {
+  return (
+    <div className="flex flex-col items-center px-16">
+      <section className="w-full max-w-5xl py-32">
+        <div className="flex items-center">
+          <h2 className="flex-1 text-3xl font-bold text-neutral-100">
+            Projects
+          </h2>
+          <a
+            href="https://github.com/darwinbillian?tab=repositories"
+            target="_blank"
+            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded hover:border-white/20 hover:bg-neutral-800"
+          >
+            View More
+            <LucideExternalLink size={16} />
           </a>
         </div>
       </section>
