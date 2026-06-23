@@ -1,5 +1,5 @@
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { LucideExternalLink, LucideMail } from "lucide-react";
+import { LucideCodeXml, LucideExternalLink, LucideMail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -59,6 +59,42 @@ function Projects() {
             View More
             <LucideExternalLink size={16} />
           </a>
+        </div>
+        <div className="mt-8 flex flex-col gap-6">
+          <div className="p-8 border border-white/10 bg-neutral-900 rounded-lg">
+            <h3 className="text-xl font-bold text-neutral-100">Godot Hub</h3>
+            <p>
+              Desktop application for managing multiple versions of the Godot
+              Engine.
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
+                React
+              </span>
+              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
+                Rust
+              </span>
+              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
+                Tailwind CSS
+              </span>
+              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
+                Tauri
+              </span>
+              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
+                TypeScript
+              </span>
+            </div>
+            <div className="mt-4 flex gap-4">
+              <a
+                href="https://github.com/darwinbillian/godot-hub"
+                target="_blank"
+                className="flex items-center gap-2 hover:text-neutral-100 hover:underline"
+              >
+                <LucideCodeXml size={16} />
+                Source Code
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
