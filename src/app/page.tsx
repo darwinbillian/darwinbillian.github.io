@@ -4,29 +4,7 @@ import {
   LucideExternalLink,
 } from "lucide-react";
 import Contacts from "@/components/Contacts";
-
-interface Project {
-  title: string;
-  description?: string;
-  tags?: string[];
-  links?: ProjectLinks;
-}
-
-interface ProjectLinks {
-  source_code?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "Godot Hub",
-    description:
-      "Desktop application for managing multiple versions of the Godot Engine.",
-    tags: ["React", "Rust", "Tailwind CSS", "Tauri", "TypeScript"],
-    links: {
-      source_code: "https://github.com/darwinbillian/godot-hub",
-    },
-  },
-];
+import { Project, projects } from "@/data/projects";
 
 export default function Home() {
   return (
