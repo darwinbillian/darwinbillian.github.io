@@ -1,5 +1,5 @@
-import { SiGithub } from "@icons-pack/react-simple-icons";
-import { LucideCodeXml, LucideExternalLink, LucideMail } from "lucide-react";
+import { LucideCodeXml, LucideExternalLink } from "lucide-react";
+import Contacts from "@/components/Contacts";
 
 export default function Home() {
   return (
@@ -23,20 +23,8 @@ function Hero() {
         <p className="mt-4">
           Based in Indonesia &middot; Open-Source Contributor
         </p>
-        <div className="mt-6 flex justify-center gap-4">
-          <a
-            href="https://github.com/darwinbillian"
-            target="_blank"
-            className="transition hover:text-neutral-100"
-          >
-            <SiGithub />
-          </a>
-          <a
-            href="mailto:darwinbillian@outlook.com"
-            className="transition hover:text-neutral-100"
-          >
-            <LucideMail />
-          </a>
+        <div className="mt-6 flex justify-center">
+          <Contacts />
         </div>
       </section>
     </div>
