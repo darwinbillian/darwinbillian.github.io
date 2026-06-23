@@ -5,6 +5,29 @@ import {
 } from "lucide-react";
 import Contacts from "@/components/Contacts";
 
+interface Project {
+  title: string;
+  description?: string;
+  tags?: string[];
+  links?: ProjectLinks;
+}
+
+interface ProjectLinks {
+  source_code?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Godot Hub",
+    description:
+      "Desktop application for managing multiple versions of the Godot Engine.",
+    tags: ["React", "Rust", "Tailwind CSS", "Tauri", "TypeScript"],
+    links: {
+      source_code: "https://github.com/darwinbillian/godot-hub",
+    },
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -60,42 +83,46 @@ function Projects() {
           </a>
         </div>
         <div className="mt-8 flex flex-col gap-6">
-          <div className="p-8 border border-white/10 bg-neutral-900 rounded-lg">
-            <h3 className="text-xl font-bold text-neutral-100">Godot Hub</h3>
-            <p>
-              Desktop application for managing multiple versions of the Godot
-              Engine.
-            </p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
-                React
-              </span>
-              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
-                Rust
-              </span>
-              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
-                Tailwind CSS
-              </span>
-              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
-                Tauri
-              </span>
-              <span className="px-1 border border-white/10 bg-neutral-800 rounded">
-                TypeScript
-              </span>
-            </div>
-            <div className="mt-4 flex gap-4">
-              <a
-                href="https://github.com/darwinbillian/godot-hub"
-                target="_blank"
-                className="flex items-center gap-2 hover:text-neutral-100 hover:underline"
-              >
-                <LucideCodeXml size={16} />
-                Source Code
-              </a>
-            </div>
-          </div>
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <div className="p-8 border border-white/10 bg-neutral-900 rounded-lg">
+      <h3 className="text-xl font-bold text-neutral-100">{project.title}</h3>
+      {project.description && <p>{project.description}</p>}
+      {project.tags && (
+        <div className="mt-2 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-0.5 border border-white/10 bg-neutral-800 rounded"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+      {project.links && (
+        <div className="mt-4 flex gap-4">
+          {project.links.source_code && (
+            <a
+              href={project.links.source_code}
+              target="_blank"
+              className="flex items-center gap-2 hover:text-neutral-100 hover:underline"
+            >
+              <LucideCodeXml size={16} />
+              Source Code
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
