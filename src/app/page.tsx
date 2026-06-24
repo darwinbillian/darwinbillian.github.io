@@ -32,7 +32,7 @@ function Hero() {
         <div className="mt-6 flex items-center justify-center gap-4">
           <a
             href="#projects"
-            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded hover:border-white/20 hover:bg-neutral-800"
+            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded transition hover:border-white/20 hover:bg-neutral-800"
           >
             Projects
             <LucideChevronsDown size={16} />
@@ -55,7 +55,7 @@ function Projects() {
           <a
             href="https://github.com/darwinbillian?tab=repositories"
             target="_blank"
-            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded hover:border-white/20 hover:bg-neutral-800"
+            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded transition hover:border-white/20 hover:bg-neutral-800"
           >
             View More
             <LucideExternalLink size={16} />
@@ -94,7 +94,7 @@ function ProjectCard({ project }: { project: Project }) {
             <a
               href={project.links.source_code}
               target="_blank"
-              className="flex items-center gap-2 hover:text-neutral-100 hover:underline"
+              className="flex items-center gap-2 transition hover:text-neutral-100 hover:underline"
             >
               <LucideCodeXml size={16} />
               Source Code
