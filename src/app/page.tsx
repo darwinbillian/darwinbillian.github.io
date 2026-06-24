@@ -17,7 +17,8 @@ export default function Home() {
 
 function Hero() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-16">
+    <div className="relative min-h-screen flex flex-col items-center justify-center px-16">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(#ffffff1a_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,white_50%,transparent_80%)]" />
       <section className="text-center">
         <p className="text-2xl font-bold text-neutral-100">
           Hi! I'm <span className="text-red-400">Darwin Billiano</span>
