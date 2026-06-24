@@ -4,7 +4,7 @@ import Contacts from "@/components/Contacts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Darwin Billiano | Software Developer",
 };
 
 const spaceGrotesk = Space_Grotesk({
