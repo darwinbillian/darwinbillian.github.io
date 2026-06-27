@@ -1,10 +1,6 @@
 import Contacts from "@/components/Contacts";
 import { Project, projects } from "@/data/projects";
-import {
-  LucideChevronsDown,
-  LucideCodeXml,
-  LucideExternalLink,
-} from "lucide-react";
+import { LucideChevronsDown, LucideExternalLink } from "lucide-react";
 
 export default function Home() {
   return (
@@ -61,10 +57,14 @@ function Projects() {
             <LucideExternalLink size={16} />
           </a>
         </div>
-        <div className="mt-8 flex flex-col gap-6">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
+        <div className="mt-8">
+          <ul className="flex flex-col gap-6">
+            {projects.map((project) => (
+              <li key={project.title}>
+                <ProjectCard project={project} />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>
@@ -77,29 +77,34 @@ function ProjectCard({ project }: { project: Project }) {
       <h3 className="text-xl font-bold text-neutral-100">{project.title}</h3>
       {project.description && <div>{project.description}</div>}
       {project.tags && (
-        <div className="mt-2 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded border border-white/10 bg-neutral-800 px-2 py-0.5"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="mt-2">
+          <ul className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <li key={tag}>
+                <span className="rounded border border-white/10 bg-neutral-800 px-2 py-0.5">
+                  {tag}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
       {project.links && (
-        <div className="mt-4 flex gap-4">
-          {project.links.map((link) => (
-            <a
-              href={link.link}
-              target="_blank"
-              className="flex items-center gap-2 transition hover:text-neutral-100 hover:underline"
-            >
-              {link.icon}
-              {link.label}
-            </a>
-          ))}
+        <div className="mt-4">
+          <ul className="flex gap-4">
+            {project.links.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.link}
+                  target="_blank"
+                  className="flex items-center gap-2 transition hover:text-neutral-100 hover:underline"
+                >
+                  {link.icon}
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

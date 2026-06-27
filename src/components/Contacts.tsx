@@ -2,10 +2,14 @@ import { Contact, contacts } from "@/data/contacts";
 
 export default function Contacts() {
   return (
-    <div className="flex gap-4">
-      {contacts.map((contact) => (
-        <ContactLink key={contact.link} contact={contact} />
-      ))}
+    <div>
+      <ul className="flex gap-4">
+        {contacts.map((contact) => (
+          <li key={contact.link}>
+            <ContactLink contact={contact} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
