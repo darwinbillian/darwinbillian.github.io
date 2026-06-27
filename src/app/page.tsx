@@ -75,7 +75,7 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="rounded-lg border border-white/10 bg-neutral-900 p-8">
       <h3 className="text-xl font-bold text-neutral-100">{project.title}</h3>
-      {project.description && <p>{project.description}</p>}
+      {project.description && <div>{project.description}</div>}
       {project.tags && (
         <div className="mt-2 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
@@ -90,16 +90,16 @@ function ProjectCard({ project }: { project: Project }) {
       )}
       {project.links && (
         <div className="mt-4 flex gap-4">
-          {project.links.source_code && (
+          {project.links.map((link) => (
             <a
-              href={project.links.source_code}
+              href={link.link}
               target="_blank"
               className="flex items-center gap-2 transition hover:text-neutral-100 hover:underline"
             >
-              <LucideCodeXml size={16} />
-              Source Code
+              {link.icon}
+              {link.label}
             </a>
-          )}
+          ))}
         </div>
       )}
     </div>

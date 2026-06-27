@@ -1,22 +1,34 @@
+import { LucideCodeXml } from "lucide-react";
+import React from "react";
+
 export interface Project {
   title: string;
-  description?: string;
+  description?: React.ReactNode;
   tags?: string[];
-  links?: ProjectLinks;
+  links?: ProjectLink[];
 }
 
-export interface ProjectLinks {
-  source_code?: string;
+export interface ProjectLink {
+  label: string;
+  link: string;
+  icon: React.ReactNode;
 }
 
 export const projects: Project[] = [
   {
     title: "Godot Hub",
-    description:
-      "Desktop application for managing multiple versions of the Godot Engine.",
+    description: (
+      <p>
+        Desktop application for managing multiple versions of the Godot Engine.
+      </p>
+    ),
     tags: ["React", "Rust", "Tailwind CSS", "Tauri", "TypeScript"],
-    links: {
-      source_code: "https://github.com/darwinbillian/godot-hub",
-    },
+    links: [
+      {
+        label: "Source Code",
+        link: "https://github.com/darwinbillian/godot-hub",
+        icon: <LucideCodeXml size={16} />,
+      },
+    ],
   },
 ];
