@@ -1,10 +1,10 @@
+import Contacts from "@/components/Contacts";
+import { Project, projects } from "@/data/projects";
 import {
   LucideChevronsDown,
   LucideCodeXml,
   LucideExternalLink,
 } from "lucide-react";
-import Contacts from "@/components/Contacts";
-import { Project, projects } from "@/data/projects";
 
 export default function Home() {
   return (

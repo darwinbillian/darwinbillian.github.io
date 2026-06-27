@@ -1,6 +1,6 @@
+import Contacts from "@/components/Contacts";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
-import Contacts from "@/components/Contacts";
 import "./globals.css";
 
 export const metadata: Metadata = {
