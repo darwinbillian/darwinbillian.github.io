@@ -21,6 +21,7 @@
     "@types/react-dom": "^19",
     "prettier": "^3.9.0",
     "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

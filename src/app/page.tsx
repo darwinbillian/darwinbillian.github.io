@@ -17,8 +17,8 @@ export default function Home() {
 
 function Hero() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center px-16">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(#ffffff1a_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_at_center,white_20%,transparent_80%)]" />
+    <div className="relative flex min-h-screen flex-col items-center justify-center px-16">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(#ffffff1a_1px,transparent_1px)] mask-[radial-gradient(ellipse_at_center,white_20%,transparent_80%)] bg-size-[24px_24px]" />
       <section className="text-center">
         <p className="text-2xl font-bold text-neutral-100">
           Hi! I'm <span className="text-red-400">Darwin Billiano</span>
@@ -32,7 +32,7 @@ function Hero() {
         <div className="mt-6 flex items-center justify-center gap-4">
           <a
             href="#projects"
-            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded transition hover:border-white/20 hover:bg-neutral-800"
+            className="flex items-center gap-2 rounded border border-white/10 bg-neutral-900 px-4 py-2 transition hover:border-white/20 hover:bg-neutral-800"
           >
             Projects
             <LucideChevronsDown size={16} />
@@ -55,7 +55,7 @@ function Projects() {
           <a
             href="https://github.com/darwinbillian?tab=repositories"
             target="_blank"
-            className="flex items-center gap-2 px-4 py-2 border border-white/10 bg-neutral-900 rounded transition hover:border-white/20 hover:bg-neutral-800"
+            className="flex items-center gap-2 rounded border border-white/10 bg-neutral-900 px-4 py-2 transition hover:border-white/20 hover:bg-neutral-800"
           >
             View More
             <LucideExternalLink size={16} />
@@ -73,7 +73,7 @@ function Projects() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="p-8 border border-white/10 bg-neutral-900 rounded-lg">
+    <div className="rounded-lg border border-white/10 bg-neutral-900 p-8">
       <h3 className="text-xl font-bold text-neutral-100">{project.title}</h3>
       {project.description && <p>{project.description}</p>}
       {project.tags && (
@@ -81,7 +81,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 border border-white/10 bg-neutral-800 rounded"
+              className="rounded border border-white/10 bg-neutral-800 px-2 py-0.5"
             >
               {tag}
             </span>
