@@ -20,6 +20,7 @@ function ContactLink({ contact }: { contact: Contact }) {
       href={contact.link}
       target="_blank"
       className="transition hover:text-neutral-100"
+      title={contact.label}
     >
       {contact.icon}
     </a>
